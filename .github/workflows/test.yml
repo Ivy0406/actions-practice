@@ -14,9 +14,16 @@ jobs:
         run: node -v
   
   task2:
+    needs: task1
     runs-on: ubuntu-latest
     steps:
       - name: clone repo
         uses: actions/checkout@v6
       - name: show all files
         run: ls -al
+      - name: setup Node.js env
+        uses: actions/setup-node@v6
+        with: 
+          node-version: 24
+      - name: check Node.js version
+        run: node -v
