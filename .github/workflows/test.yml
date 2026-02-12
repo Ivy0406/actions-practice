@@ -19,4 +19,4 @@ jobs:
       - name: clone repo
         uses: actions/checkout@v6
       - name: show all files
-        run: ls-al
+        run: ls -al
