@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+   branches: [main]
+
+jobs:
+  task1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check paths
+        run: echo "$(pwd)"
+      - name: check Node.js version
+        run: node -v
+  
+  task2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v6
+      
+      - name: show all files
+        run: ls-al
